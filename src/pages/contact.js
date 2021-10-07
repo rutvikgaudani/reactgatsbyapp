@@ -7,29 +7,28 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import HeroSection from "../components/Reusable/HeroSection"
 import Infoblock from "../components/Reusable/Infoblock"
-import DualInfoblock from "../components/Reusable/DualInfoblock"
-import Teamphotosection from "../components/About/Teamphotosection"
+import Contact from "../components/Contact/contact"
 
-const AboutPage = ({ data }) => (
+
+const ContactPage = ({ data }) => (
   <Layout>
     <Seo title="Home" />
   
 
     <HeroSection 
       img={data.img.childImageSharp.fluid}
-      title="Computer Science student"
+      title="Contact Us"
       subtitle=""
       heroclass="about-background"
     />
-    <DualInfoblock heading="A message from a developer" source="https://i.postimg.cc/BnFx7hKq/burger.jpg"/>
-    <Infoblock heading="About Vision" />
-    <Teamphotosection />
+    <Infoblock heading="How can we help you?" />
+    <Contact />
   </Layout>
 )
 
 export const query = graphql`
 {
-  img: file(relativePath: {eq: "about.png"}){
+  img: file(relativePath: {eq: "contact.png"}){
 		childImageSharp{
 			fluid{
 				...GatsbyImageSharpFluid_tracedSVG
@@ -39,4 +38,4 @@ export const query = graphql`
 }
 `
 
-export default AboutPage
+export default ContactPage
